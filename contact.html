@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Forge Construction</title>
+  <meta name="description" content="Get in touch with Forge Construction. Request a quote or start a conversation about your next build.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo">FORGE<span>.</span></a>
+      <nav class="nav-main">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal" style="margin-bottom: var(--space-2xl);">
+          <p class="text-accent">Get in Touch</p>
+          <h2>START A CONVERSATION</h2>
+          <p>Tell us about your project. We typically respond within 24 hours.</p>
+        </div>
+
+        <div class="contact-wrap">
+          <div class="contact-info reveal-left">
+            <h2>CONTACT US</h2>
+            <div class="contact-details">
+              <p><strong>Phone</strong><br><a href="tel:+12035551234">(203) 555-1234</a></p>
+              <p><strong>Email</strong><br><a href="mailto:hello@forgeconstruction.com">hello@forgeconstruction.com</a></p>
+              <p><strong>Seattle (HQ)</strong><br>1200 Construction Way, Suite 400<br>Seattle, WA 98101</p>
+              <p><strong>Portland</strong><br>450 Builders Blvd<br>Portland, OR 97201</p>
+              <p><strong>Tacoma</strong><br>88 Site Drive<br>Tacoma, WA 98402</p>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Licensed, bonded, and insured in Washington and Oregon. We serve the greater Pacific Northwest.</p>
+          </div>
+
+          <div class="contact-form reveal-right">
+            <form action="#" method="get" id="contact-form">
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+              </div>
+              <div class="form-group">
+                <label for="project">Project type</label>
+                <input type="text" id="project" name="project" placeholder="e.g. Commercial, Residential, Renovation">
+              </div>
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required placeholder="Tell us about your project, timeline, and any questions..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <p style="margin-top: var(--space-md); font-size: 0.85rem; color: var(--text-muted);">This is a static demo. In production, connect the form to your backend or a service like Formspree.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand footer-col">
+          <a href="index.html" class="logo">FORGE<span>.</span></a>
+          <p>Building excellence in the Pacific Northwest since 1987.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+12035551234">(203) 555-1234</a></li>
+            <li><a href="mailto:hello@forgeconstruction.com">hello@forgeconstruction.com</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Forge Construction. All rights reserved.</p>
+        <p>Licensed • Bonded • Insured</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
