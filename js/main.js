@@ -1,57 +1,94 @@
 (function () {
   'use strict';
 
-  // Page-load animation: add .loaded to body so .animate-in elements transition in
-  function initPageLoadAnimations() {
-    document.body.classList.add('loaded');
+  var panels = document.querySelectorAll('.panel');
+  var navLinksOnly = document.querySelectorAll('.nav-link');
+  var panelLinks = document.querySelectorAll('[data-panel]');
+
+  function switchPanel(name) {
+    if (!name) return;
+    // Update nav active state (only for .nav-link)
+    navLinksOnly.forEach(function (el) {
+      var linkPanel = el.getAttribute('data-panel');
+      el.classList.toggle('active', linkPanel === name);
+    });
+    // Show/hide panels
+    panels.forEach(function (panel) {
+      if (panel.getAttribute('data-panel') === name) {
+        panel.classList.add('active');
+        if (name === 'home') animateCounters();
+      } else {
+        panel.classList.remove('active');
+      }
+    });
   }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      requestAnimationFrame(function () {
-        requestAnimationFrame(initPageLoadAnimations);
+
+  function animateCounters() {
+    var nums = document.querySelectorAll('.stat-num[data-count]');
+    nums.forEach(function (el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var duration = 1200;
+      var start = null;
+      var startVal = 0;
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var easeOut = 1 - Math.pow(1 - progress, 3);
+        var current = Math.round(startVal + (target - startVal) * easeOut);
+        el.textContent = current;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  // Nav and panel link clicks
+  panelLinks.forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      var panelName = el.getAttribute('data-panel');
+      if (panelName) {
+        e.preventDefault();
+        switchPanel(panelName);
+        var navMain = document.querySelector('.nav-main');
+        if (navMain && navMain.classList.contains('open')) {
+          navMain.classList.remove('open');
+          document.querySelector('.nav-toggle').classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      }
+    });
+  });
+
+  // Initial panel: show home and run hero animations
+  document.body.classList.add('loaded');
+  switchPanel('home');
+
+  // Projects filter
+  var filterBar = document.querySelector('.filter-bar');
+  var projectMinis = document.querySelectorAll('.project-mini[data-category]');
+  if (filterBar && projectMinis.length) {
+    filterBar.addEventListener('click', function (e) {
+      var btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      var filter = btn.getAttribute('data-filter');
+      filterBar.querySelectorAll('.filter-btn').forEach(function (b) {
+        b.classList.toggle('active', b === btn);
+      });
+      projectMinis.forEach(function (card) {
+        var cat = card.getAttribute('data-category');
+        var show = filter === 'all' || cat === filter;
+        card.style.display = show ? '' : 'none';
       });
     });
-  } else {
-    requestAnimationFrame(function () {
-      requestAnimationFrame(initPageLoadAnimations);
-    });
   }
 
-  // Scroll reveal: add .revealed when elements enter viewport
-  var revealSelectors = '.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-stagger';
-  var revealEls = document.querySelectorAll(revealSelectors);
-  if (revealEls.length && 'IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-          }
-        });
-      },
-      { rootMargin: '0px 0px -80px 0px', threshold: 0.05 }
-    );
-    revealEls.forEach(function (el) {
-      observer.observe(el);
+  // Contact form
+  var contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('This is a static demo. In production, connect this form to your backend or Formspree.');
     });
-  } else if (revealEls.length) {
-    revealEls.forEach(function (el) {
-      el.classList.add('revealed');
-    });
-  }
-
-  // Header scroll effect
-  var header = document.getElementById('header');
-  if (header) {
-    function onScroll() {
-      if (window.scrollY > 60) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
   }
 
   // Mobile nav toggle
@@ -62,42 +99,6 @@
       navMain.classList.toggle('open');
       navToggle.classList.toggle('open');
       document.body.style.overflow = navMain.classList.contains('open') ? 'hidden' : '';
-    });
-
-    // Close nav when clicking a link (for single-page feel on multi-page site)
-    navMain.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        navMain.classList.remove('open');
-        navToggle.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-  }
-
-  // Projects filter (Projects page)
-  var filterBar = document.querySelector('.filter-bar');
-  var projectCards = document.querySelectorAll('.project-card[data-category]');
-  if (filterBar && projectCards.length) {
-    filterBar.addEventListener('click', function (e) {
-      var btn = e.target.closest('button[data-filter]');
-      if (!btn) return;
-      var filter = btn.getAttribute('data-filter');
-      filterBar.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      projectCards.forEach(function (card) {
-        var cat = card.getAttribute('data-category');
-        var show = filter === 'all' || cat === filter;
-        card.style.display = show ? '' : 'none';
-      });
-    });
-  }
-
-  // Contact form: prevent default and show message (static demo)
-  var contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      alert('This is a static demo. In production, connect this form to your backend or a service like Formspree.');
     });
   }
 })();

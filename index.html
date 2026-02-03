@@ -4,174 +4,193 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Forge Construction — Building Excellence Since 1987</title>
-  <meta name="description" content="Forge Construction delivers commercial and residential projects with precision, integrity, and craftsmanship. Based in the Pacific Northwest.">
+  <meta name="description" content="Forge Construction delivers commercial and residential projects with precision, integrity, and craftsmanship. Pacific Northwest.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header" id="header">
-    <div class="container">
-      <a href="index.html" class="logo">FORGE<span>.</span></a>
-      <nav class="nav-main">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
+  <div class="site-wrap">
+    <header class="site-header" id="header">
       <div class="container">
-        <span class="hero-tag animate-in animate-in-delay-1">Pacific Northwest — Est. 1987</span>
-        <h1 class="animate-in animate-in-delay-2">BUILD WHAT<br>MATTERS.</h1>
-        <p class="lead animate-in animate-in-delay-3">We design and construct commercial and residential spaces that stand the test of time. From foundation to finish, every detail is forged with integrity.</p>
-        <div class="hero-buttons animate-in animate-in-delay-4">
-          <a href="projects.html" class="btn btn-primary">View Our Work</a>
-          <a href="contact.html" class="btn btn-outline">Get a Quote</a>
-        </div>
+        <a href="#" class="logo" data-panel="home">FORGE<span>.</span></a>
+        <nav class="nav-main">
+          <a href="#" class="nav-link active" data-panel="home">Home</a>
+          <a href="#" class="nav-link" data-panel="about">About</a>
+          <a href="#" class="nav-link" data-panel="services">Services</a>
+          <a href="#" class="nav-link" data-panel="projects">Projects</a>
+          <a href="#" class="nav-link" data-panel="contact">Contact</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </section>
+    </header>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-header reveal">
-          <p class="text-accent">What We Do</p>
-          <h2>FULL-SERVICE CONSTRUCTION</h2>
-          <p>From ground-up builds to major renovations, we bring the same level of craft and accountability to every project.</p>
-        </div>
-        <div class="card-grid reveal-stagger">
-          <article class="card">
-            <div class="card-icon">◆</div>
-            <h3>Commercial</h3>
-            <p>Office buildings, retail, mixed-use, and industrial facilities. We deliver on schedule and within budget.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">▣</div>
-            <h3>Residential</h3>
-            <p>Custom homes, multi-family, and high-end renovations. Quality that speaks for itself.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon">◇</div>
-            <h3>Renovation & Restoration</h3>
-            <p>Historic preservation and adaptive reuse. We honor the past while building for the future.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="stats-strip">
-      <div class="container">
-        <div class="stats-grid reveal-stagger">
-          <div class="stat">
-            <div class="stat-number">38+</div>
-            <div class="stat-label">Years in business</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">400+</div>
-            <div class="stat-label">Projects completed</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">98%</div>
-            <div class="stat-label">Client retention</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">50+</div>
-            <div class="stat-label">Awards & certifications</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header reveal">
-          <p class="text-accent">Featured</p>
-          <h2>RECENT PROJECTS</h2>
-          <p>A glimpse of what we've been building lately.</p>
-        </div>
-        <div class="card-grid reveal-stagger">
-          <a href="projects.html" class="project-card">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600" alt="Riverside Office Complex">
-            <div class="card-content">
-              <h3>Riverside Office Complex</h3>
-              <p>Commercial — Seattle, WA</p>
+    <main class="panel-container">
+      <!-- HOME -->
+      <section class="panel active" id="panel-home" data-panel="home">
+        <div class="panel-inner hero-panel">
+          <div class="hero-bg" aria-hidden="true"></div>
+          <div class="container">
+            <span class="hero-tag animate-char">Pacific Northwest — Est. 1987</span>
+            <h1 class="animate-line"><span class="line">BUILD WHAT</span><span class="line">MATTERS.</span></h1>
+            <p class="lead animate-fade">We design and construct commercial and residential spaces that stand the test of time.</p>
+            <div class="hero-buttons animate-fade">
+              <a href="#" class="btn btn-primary" data-panel="projects">View Our Work</a>
+              <a href="#" class="btn btn-outline" data-panel="contact">Get a Quote</a>
             </div>
-          </a>
-          <a href="projects.html" class="project-card">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600" alt="Cedar Heights Residence">
-            <div class="card-content">
-              <h3>Cedar Heights Residence</h3>
-              <p>Residential — Portland, OR</p>
+            <div class="stats-inline">
+              <div class="stat"><span class="stat-num" data-count="38">0</span><span class="stat-label">Years</span></div>
+              <div class="stat"><span class="stat-num" data-count="400">0</span><span class="stat-label">Projects</span></div>
+              <div class="stat"><span class="stat-num" data-count="98">0</span><span class="stat-suffix">%</span><span class="stat-label">Retention</span></div>
             </div>
-          </a>
-          <a href="projects.html" class="project-card">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600" alt="Downtown Mixed-Use">
-            <div class="card-content">
-              <h3>Downtown Mixed-Use</h3>
-              <p>Mixed-Use — Tacoma, WA</p>
-            </div>
-          </a>
+          </div>
         </div>
-        <div style="text-align: center; margin-top: var(--space-lg);" class="reveal">
-          <a href="projects.html" class="btn btn-outline">See All Projects</a>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
+      <!-- ABOUT -->
+      <section class="panel" id="panel-about" data-panel="about">
+        <div class="panel-inner about-panel">
+          <div class="container">
+            <p class="text-accent panel-tag">Our Story</p>
+            <h2 class="panel-title">BUILT ON TRUST.</h2>
+            <div class="about-grid">
+              <p class="lead">Forge started in Seattle in 1987. We've grown from a crew of four to a full-service firm—never losing the hands-on ethic.</p>
+              <div class="values-compact">
+                <div class="value"><span class="value-num">01</span> Integrity</div>
+                <div class="value"><span class="value-num">02</span> Craft</div>
+                <div class="value"><span class="value-num">03</span> Partnership</div>
+                <div class="value"><span class="value-num">04</span> Stewardship</div>
+              </div>
+            </div>
+            <a href="#" class="btn btn-primary" data-panel="contact">Contact Us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="panel" id="panel-services" data-panel="services">
+        <div class="panel-inner services-panel">
+          <div class="container">
+            <p class="text-accent panel-tag">What We Do</p>
+            <h2 class="panel-title">FULL-SERVICE CONSTRUCTION</h2>
+            <div class="cards-row">
+              <article class="card-mini">
+                <div class="card-icon">◆</div>
+                <h3>Commercial</h3>
+                <p>Office, retail, mixed-use, industrial. On time, on budget.</p>
+              </article>
+              <article class="card-mini">
+                <div class="card-icon">▣</div>
+                <h3>Residential</h3>
+                <p>Custom homes, multi-family, high-end renovations.</p>
+              </article>
+              <article class="card-mini">
+                <div class="card-icon">◇</div>
+                <h3>Renovation</h3>
+                <p>Historic preservation and adaptive reuse.</p>
+              </article>
+              <article class="card-mini">
+                <div class="card-icon">◈</div>
+                <h3>Design-Build</h3>
+                <p>Pre-construction, value engineering, concept to keys.</p>
+              </article>
+            </div>
+            <a href="#" class="btn btn-outline" data-panel="contact">Discuss Your Project</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="panel" id="panel-projects" data-panel="projects">
+        <div class="panel-inner projects-panel">
+          <div class="container">
+            <p class="text-accent panel-tag">Portfolio</p>
+            <h2 class="panel-title">OUR WORK</h2>
+            <div class="filter-bar">
+              <button type="button" class="filter-btn active" data-filter="all">All</button>
+              <button type="button" class="filter-btn" data-filter="commercial">Commercial</button>
+              <button type="button" class="filter-btn" data-filter="residential">Residential</button>
+              <button type="button" class="filter-btn" data-filter="mixed-use">Mixed-Use</button>
+            </div>
+            <div class="projects-row">
+              <a href="#" class="project-mini" data-category="commercial">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400" alt="Riverside Office">
+                <span class="project-title">Riverside Office</span>
+              </a>
+              <a href="#" class="project-mini" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400" alt="Cedar Heights">
+                <span class="project-title">Cedar Heights</span>
+              </a>
+              <a href="#" class="project-mini" data-category="mixed-use">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400" alt="Downtown Mixed-Use">
+                <span class="project-title">Downtown Mixed-Use</span>
+              </a>
+              <a href="#" class="project-mini" data-category="restoration">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400" alt="Heritage Mill">
+                <span class="project-title">Heritage Mill</span>
+              </a>
+              <a href="#" class="project-mini" data-category="commercial">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400" alt="Tech Campus">
+                <span class="project-title">Tech Campus</span>
+              </a>
+              <a href="#" class="project-mini" data-category="residential">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400" alt="Lakefront Estate">
+                <span class="project-title">Lakefront Estate</span>
+              </a>
+            </div>
+            <a href="#" class="btn btn-primary" data-panel="contact">Start a Project</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="panel" id="panel-contact" data-panel="contact">
+        <div class="panel-inner contact-panel">
+          <div class="container contact-layout">
+            <div class="contact-info">
+              <p class="text-accent panel-tag">Get in Touch</p>
+              <h2 class="panel-title">START A CONVERSATION</h2>
+              <p>Tell us about your project. We respond within 24 hours.</p>
+              <div class="contact-details">
+                <p><a href="tel:+12035551234">(203) 555-1234</a></p>
+                <p><a href="mailto:hello@forgeconstruction.com">hello@forgeconstruction.com</a></p>
+                <p>Seattle • Portland • Tacoma</p>
+              </div>
+              <p class="legal">Licensed, bonded, insured — WA & OR.</p>
+            </div>
+            <form class="contact-form" id="contact-form" action="#" method="get">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name *</label>
+                  <input type="text" id="name" name="name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
       <div class="container">
-        <div class="cta-banner reveal-scale">
-          <h2>READY TO BUILD?</h2>
-          <p>Tell us about your project. We'll respond within 24 hours with an initial assessment and next steps.</p>
-          <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+        <span class="logo">FORGE<span>.</span></span>
+        <span class="footer-meta">© 2025 Forge Construction • Licensed • Bonded • Insured</span>
+        <div class="footer-links">
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand footer-col">
-          <a href="index.html" class="logo">FORGE<span>.</span></a>
-          <p>Building excellence in the Pacific Northwest since 1987. Commercial, residential, and restoration.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigate</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="tel:+12035551234">(203) 555-1234</a></li>
-            <li><a href="mailto:hello@forgeconstruction.com">hello@forgeconstruction.com</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Follow</h4>
-          <ul>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">Instagram</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 Forge Construction. All rights reserved.</p>
-        <p>Licensed • Bonded • Insured</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
