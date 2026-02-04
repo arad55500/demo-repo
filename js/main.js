@@ -27,7 +27,7 @@
     var nums = document.querySelectorAll('.stat-num[data-count]');
     nums.forEach(function (el) {
       var target = parseInt(el.getAttribute('data-count'), 10);
-      var duration = 1200;
+      var duration = 1500;
       var start = null;
       var startVal = 0;
       function step(timestamp) {
@@ -63,7 +63,7 @@
   document.body.classList.add('loaded');
   switchPanel('home');
 
-  // Projects filter
+  // Gallery filter
   var filterBar = document.querySelector('.filter-bar');
   var projectMinis = document.querySelectorAll('.project-mini[data-category]');
   if (filterBar && projectMinis.length) {
@@ -87,7 +87,10 @@
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      alert('This is a static demo. In production, connect this form to your backend or Formspree.');
+      var formData = new FormData(contactForm);
+      var name = formData.get('name');
+      alert('Thank you, ' + name + '! We\'ll get back to you within 24 hours. This is a demo form - in production, connect this to your backend or Formspree.');
+      contactForm.reset();
     });
   }
 
@@ -100,5 +103,25 @@
       navToggle.classList.toggle('open');
       document.body.style.overflow = navMain.classList.contains('open') ? 'hidden' : '';
     });
+    
+    // Close nav when clicking outside
+    document.addEventListener('click', function(e) {
+      if (navMain.classList.contains('open') && 
+          !navMain.contains(e.target) && 
+          !navToggle.contains(e.target)) {
+        navMain.classList.remove('open');
+        navToggle.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
   }
+
+  // Handle image loading errors - show placeholder
+  var images = document.querySelectorAll('.project-mini img');
+  images.forEach(function(img) {
+    img.addEventListener('error', function() {
+      this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23e8f4f8" width="400" height="300"/%3E%3Ctext fill="%2300a8cc" font-family="Arial" font-size="18" x="50%25" y="50%25" text-anchor="middle" dy=".3em"%3EImage Placeholder%3C/text%3E%3C/svg%3E';
+      this.alt = 'Image placeholder';
+    });
+  });
 })();
